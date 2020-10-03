@@ -25,7 +25,9 @@
 
 - (void)setValues:(NSArray *)values {
 	[self removeAllSegments];
+  [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UISegmentedControl class]]] setNumberOfLines:0];
 	for (id segment in values) {
+
 		if ([segment isKindOfClass:[NSMutableDictionary class]]){
 			UIImage *image = [[RCTConvert UIImage:segment] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 			[self insertSegmentWithImage:image
